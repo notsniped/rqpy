@@ -18,3 +18,5 @@ __version__ = "2022.1027.0-lazer"
 
 # Sub-module Imports
 from .authorization import *
+from .chat import *
+from .messages import *
