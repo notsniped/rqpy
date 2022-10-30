@@ -52,5 +52,3 @@ class UserClient:
             self.__client_id = client_ids[username]
             return self.__client_id
         else: raise SystemExit(f"API login failed (Status Code {api_receive.status_code}): {api_receive.text}")
-
-        # TODO: Make send message function in separate file
