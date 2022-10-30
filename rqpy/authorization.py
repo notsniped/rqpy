@@ -4,7 +4,6 @@
 
 # Imports
 import requests
-import json
 
 
 # Functions
@@ -19,10 +18,6 @@ def register(username: str, password: str):
     api_receive = requests.get(f"https://rqchat.thatonearchuser.repl.co/register?username={username}&password={password}")
     if api_receive.status_code == 200:
         client_id = api_receive.text
-        with open(".data/client_ids.json", 'r') as f: client_id_dict = json.load(f)
-        client_id_dict[username] = client_id
-        with open(".data/client_ids.json", 'w+') as f:
-            json.dump(client_id_dict, f)
         return client_id
     else: raise SystemError(f"API request returned status code {api_receive.status_code}: {api_receive.text}")
 
@@ -48,7 +43,6 @@ class UserClient:
         if " " in password: raise ValueError("Password may not contain spaces")
         api_receive = requests.get(f"https://rqchat.thatonearchuser.repl.co/login?username={username}&password={password}")
         if api_receive.status_code == 200:
-            with open(".data/client_ids.json", 'r') as f: client_ids = json.load(f)
-            self.__client_id = client_ids[username]
+            self.__client_id = api_receive.text
             return self.__client_id
         else: raise SystemExit(f"API login failed (Status Code {api_receive.status_code}): {api_receive.text}")
