@@ -19,7 +19,7 @@ def register(username: str, password: str):
     if api_receive.status_code == 200:
         client_id = api_receive.text
         return client_id
-    else: raise SystemError(f"API request returned status code {api_receive.status_code}: {api_receive.text}")
+    else: raise SystemExit(f"API request returned status code {api_receive.status_code}: {api_receive.text}")
 
 
 class UserClient:
