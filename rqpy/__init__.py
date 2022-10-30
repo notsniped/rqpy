@@ -14,7 +14,7 @@ __title__ = "rqpy"
 __author__ = "NKA Development Organization"
 __license__ = "GNU GPLv3"
 __copyright__ = "Copyright 2022-present NKA Development Organization"
-__version__ = "2022.1027.0-lazer"
+__version__ = "2022.1030.0-lazer"
 
 # Sub-module Imports
 from .authorization import *
