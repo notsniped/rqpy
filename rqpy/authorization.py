@@ -11,6 +11,7 @@ import json
 def register(username: str, password: str):
     """
     Registers a new user in RqChat with the specified username and password.
+
     Returns a unique client id for further authorization.
     """
     if " " in username: raise ValueError("Username may not contain spaces")
@@ -37,7 +38,12 @@ class UserClient:
         self.__client_id = str()
 
     def login(self, username: str, password: str):
-        """Logs into the RqChat API with a specified username and password"""
+        """
+        Logs into the RqChat API with a specified username and password.
+        
+        Returns a unique client id for further authorization.
+        Raises `SystemExit` if there was a failure while logging in.
+        """
         if " " in username: raise ValueError("Username may not contain spaces")
         if " " in password: raise ValueError("Password may not contain spaces")
         api_receive = requests.get(f"https://rqchat.thatonearchuser.repl.co/login?username={username}&password={password}")
