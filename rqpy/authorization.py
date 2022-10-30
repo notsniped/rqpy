@@ -23,7 +23,7 @@ def register(username: str, password: str):
         client_id_dict[username] = client_id
         with open(".data/client_ids.json", 'w+') as f:
             json.dump(client_id_dict, f)
-        return client_id, f"Successfully registered as {username}"
+        return client_id
     else: raise SystemError(f"API request returned status code {api_receive.status_code}: {api_receive.text}")
 
 
