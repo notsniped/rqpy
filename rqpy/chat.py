@@ -4,7 +4,6 @@
 
 import requests
 
-
 class ChatListener:
     def __init__(self):
         print("Listening into RqChat servers.")
