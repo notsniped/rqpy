@@ -5,7 +5,6 @@
 # Imports
 import requests
 
-
 # Functions
 def register(username: str, password: str):
     """
@@ -20,7 +19,6 @@ def register(username: str, password: str):
         client_id = api_receive.text
         return client_id
     else: raise SystemExit(f"API request returned status code {api_receive.status_code}: {api_receive.text}")
-
 
 class UserClient:
     """Makes a new user client object"""
