@@ -6,7 +6,6 @@ import requests
 import datetime
 import time
 
-
 class MessageHandler:
     def __init__(self, username: str, client_id, *, show_timestamps: bool = False):
         self.username = username
